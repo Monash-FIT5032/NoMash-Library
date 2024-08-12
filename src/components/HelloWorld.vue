@@ -11,8 +11,8 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      This week, we have played around with JSON and Computed Properties. We have also learned how
-      to use Vue Directives to display data from JSON objects.
+      This week, we installed Bootstrap and added a basic form. Note this is still in the boring Vue
+      template.
     </h3>
   </div>
 </template>

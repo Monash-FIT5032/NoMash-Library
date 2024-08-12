@@ -74,7 +74,7 @@ const toggleMessage = () => {
 <!-- JSONLab.vue -->
 <template>
   <div class="json-lab">
-    <h1>🗄️ JSON Data & Vue Directives Lab</h1>
+    <h1>🗄️ W2. JSON Data & Vue Directives Lab</h1>
 
     <section class="lab-section">
       <h2>📚 Working with JSON Arrays</h2>
