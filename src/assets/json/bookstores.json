@@ -1,0 +1,14 @@
+{
+  "name": "Worldwide Bookstores",
+  "totalStores": 5,
+  "countries": ["USA", "UK", "France"],
+  "storeTypes": {
+    "physical": 3,
+    "online": 2
+  },
+  "topSellers": ["To Kill a Mockingbird", "1984", "The Great Gatsby"],
+  "openingHours": {
+    "weekdays": { "open": "9:00 AM", "close": "9:00 PM" },
+    "weekends": { "open": "10:00 AM", "close": "10:00 PM" }
+  }
+}
