@@ -1,4 +1,5 @@
 <script setup>
+// eslint-disable-next-line no-unused-vars
 import JSONLab from './components/JSONLab.vue'
 import BHeader from './components/BHeader.vue'
 import LibraryRegistrationForm from './components/LibraryRegistrationForm.vue'
