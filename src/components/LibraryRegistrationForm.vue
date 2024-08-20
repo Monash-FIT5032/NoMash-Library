@@ -42,7 +42,7 @@ const errors = ref({
 
 const validateName = (blur) => {
   if (formData.value.username.length < 3) {
-    if (blur) errors.value.username = 'Name must be at least 3 characters'
+    if (blur) errors.value.username = 'Name must be  least 3 characters'
   } else {
     errors.value.username = null
   }
