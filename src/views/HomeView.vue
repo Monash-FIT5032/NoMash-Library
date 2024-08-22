@@ -225,6 +225,9 @@ const reasonContainFriend = (blur) => {
 #username:focus,
 #password:focus,
 #isAustralian:focus,
+#confirm-password:focus,
+#reason:focus,
+#gender:focus
 .card {
   border: 1px solid #ccc;
   border-radius: 10px;
