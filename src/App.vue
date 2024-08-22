@@ -5,7 +5,8 @@ import BHeader from './components/BHeader.vue'
 </script>
 
 <template>
-  <header>
+  <div id="app">
+    <header>
     <BHeader />
   </header>
 
@@ -14,6 +15,8 @@ import BHeader from './components/BHeader.vue'
     <!-- <JSONLab /> -->
      <router-view></router-view>
   </main>
+  </div>
+  
 </template>
 
 <style scoped>

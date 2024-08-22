@@ -13,3 +13,4 @@ app.use(PrimeVue, { theme: { preset: Aura } })
 app.use(router)
 
 app.mount('#app')
+app.config.devtools = true;

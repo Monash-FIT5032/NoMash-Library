@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { isAuthenticated, logout } from '@/router/authentication';    
+</script>
+
 <template>
   <!-- Using Bootstrap's Header template (starter code) -->
   <!-- https://getbootstrap.com/docs/5.0/examples/headers/ -->
@@ -5,12 +9,18 @@
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <router-link to="/" class="nav-link" active-class="active" aria-current="page">Home (Week 5)</router-link>
+          <router-link to="/" class="nav-link" active-class="active" aria-current="page"
+            >Home (Week 5)</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">About</router-link>
         </li>
-        <!-- <li class="nav-item"><a href="#" class="nav-link">Contact us</a></li> -->
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
+        </li>
+        <li v-if="isAuthenticated" class="nav-item">
+          <router-link to="" class="nav-link" @click="logout">Logout</router-link>
+        </li>
       </ul>
     </header>
   </div>
@@ -32,7 +42,6 @@
   background-color: var(--bs-dark);
   border-color: var(--bs-gray);
 }
-
 .form-control-dark:focus {
   color: #fff;
   background-color: var(--bs-dark);

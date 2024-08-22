@@ -13,8 +13,9 @@
     </div>
 </template>
 
-<script setup>
+<script>
 // No script needed for now
+
 </script>
 
 <style></style>
