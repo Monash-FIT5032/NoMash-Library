@@ -14,7 +14,8 @@
     "@primevue/themes": "^4.0.4",
     "bootstrap": "^5.3.3",
     "primevue": "^4.0.4",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
