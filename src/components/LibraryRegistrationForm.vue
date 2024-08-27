@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 
@@ -17,7 +17,8 @@ const submittedCards = ref([])
 const submitForm = () => {
   validateName(true)
   validatePassword(true)
-  if (!errors.value.username && !errors.value.password) {
+  validateConfirmPassword(true)
+  if (!errors.value.username && !errors.value.password && !errors.value.confirmPassword) {
     submittedCards.value.push({ ...formData.value })
     clearForm()
   }
@@ -27,6 +28,7 @@ const clearForm = () => {
   formData.value = {
     username: '',
     password: '',
+    confirmPassword: '',
     isAustralian: false,
     reason: '',
     gender: ''
@@ -38,12 +40,13 @@ const errors = ref({
   password: null,
   resident: null,
   gender: null,
-  reason: null
+  reason: null,
+  confirmPassword: null
 })
 
 const validateName = (blur) => {
   if (formData.value.username.length < 3) {
-    if (blur) errors.value.username = 'Name must be  least 3 characters'
+    if (blur) errors.value.username = 'Name must be at least 3 characters'
   } else {
     errors.value.username = null
   }
@@ -79,10 +82,14 @@ const validateConfirmPassword = (blur) => {
     errors.value.confirmPassword = null
   }
 }
+
+// Computed property to check if "friend" is in the reason
+const containsFriend = computed(() => {
+  return formData.value.reason.toLowerCase().includes('friend')
+})
 </script>
 
 <template>
-  <!-- 🗄️ W3. Library Registration Form -->
   <div class="container mt-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -105,7 +112,6 @@ const validateConfirmPassword = (blur) => {
               <div v-if="errors.username" class="text-danger">{{ errors.username }}</div>
             </div>
             
-            <!-- Gender Dropdown -->
             <div class="col-md-6 col-sm-6">
               <label for="gender" class="form-label">Gender</label>
               <select class="form-select" id="gender" v-model="formData.gender" required>
@@ -118,9 +124,7 @@ const validateConfirmPassword = (blur) => {
             </div>
           </div>
           
-          
           <div class="row mb-3">
-             <!-- Password Field --> 
             <div class="col-md-6 col-sm-6">
               <label for="password" class="form-label">Password</label>
               <input
@@ -133,19 +137,19 @@ const validateConfirmPassword = (blur) => {
               />
               <div v-if="errors.password" class="text-danger">{{ errors.password }}</div>
             </div>
-            <!-- Confirmpassword Field --> 
+            
             <div class="col-md-6 col-sm-6">
-                  <label for="confirm-password" class="form-label">Confirm password</label>
-                  <input
-                      type="password"
-                      class="form-control"
-                      id="confirm-password"
-                      v-model="formData.confirmPassword"
-                      @blur="() => validateConfirmPassword(true)"
-                  />
-                  <div v-if="errors.confirmPassword" class="text-danger">
-                      {{ errors.confirmPassword }}
-                  </div>
+              <label for="confirm-password" class="form-label">Confirm password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm-password"
+                v-model="formData.confirmPassword"
+                @blur="() => validateConfirmPassword(true)"
+              />
+              <div v-if="errors.confirmPassword" class="text-danger">
+                {{ errors.confirmPassword }}
+              </div>
             </div>
           </div>
 
@@ -162,7 +166,7 @@ const validateConfirmPassword = (blur) => {
               </div>
             </div>
           </div>
-          
+
           <div class="mb-3">
             <label for="reason" class="form-label">Reason for joining</label>
             <textarea
@@ -171,6 +175,9 @@ const validateConfirmPassword = (blur) => {
               rows="3"
               v-model="formData.reason"
             ></textarea>
+            <div v-if="containsFriend" class="text-success">
+              Great to have a friend
+            </div>
           </div>
           
           <div class="text-center">
