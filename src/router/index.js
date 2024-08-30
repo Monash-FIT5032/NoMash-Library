@@ -3,9 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import AccessDeniedView from '../views/AccessDeniedView.vue'
-import { ref } from 'vue'
-
-const isAuthenticated = ref(false) // 用于保存用户的登录状态
+import { store } from '../store' // 导入全局状态
 
 const routes = [
   {
@@ -17,7 +15,7 @@ const routes = [
     path: '/about',
     name: 'About',
     component: AboutView,
-    meta: { requiresAuth: true } // 需要登录才能访问
+    meta: { requiresAuth: true }
   },
   {
     path: '/login',
@@ -36,9 +34,8 @@ const router = createRouter({
   routes
 })
 
-// 全局导航守卫
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated.value) {
+  if (to.meta.requiresAuth && !store.isAuthenticated) {
     next('/login')
   } else {
     next()
