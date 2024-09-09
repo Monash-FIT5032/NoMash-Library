@@ -3,9 +3,15 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import LoginView from '../views/LoginView.vue'
 import AccessDeniedView from '../views/AccessDeniedView.vue'
-import { store } from '../store' // 导入全局状态
+import { store } from '../store' 
+import FirebaseSigninView from '@/views/FirebaseSigninView.vue'
 
 const routes = [
+  {
+    path: 'FireLogin',
+    name: 'Firelogin',
+    component: FirebaseSigninView
+  },
   {
     path: '/',
     name: 'Home',
