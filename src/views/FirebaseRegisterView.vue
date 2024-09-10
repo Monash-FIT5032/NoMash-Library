@@ -16,11 +16,19 @@
   const auth = getAuth()
   const register = () => {
     createUserWithEmailAndPassword(auth, email.value, password.value)
-      .then((data) => {
-        console.log("Firebase Register Successful!")
-        router.push("/FireLogin")
-      }).catch((error) => {
-        console.log(error.code);
-      })
+    .then((data) => {
+    console.log("Firebase Register Successful!");
+
+    // 获取用户信息
+    const user = data.user;
+    console.log("User ID:", user.uid); // 输出用户唯一标识符
+    console.log("User Email:", user.email); // 输出用户邮箱
+
+    // 跳转到登录页面
+    router.push("/FireLogin");
+  })
+  .catch((error) => {
+    console.log(error.code);
+  });
   };
-  </script>
+</script>

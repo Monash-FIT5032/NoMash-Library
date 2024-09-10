@@ -15,6 +15,9 @@
         <li class="nav-item">
           <router-link to="/Firelogin" class="nav-link" active-class="active">Firebase Login</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/FireRegister" class="nav-link" active-class="active">Firebase Register</router-link>
+        </li>
       </ul>
     </header>
   </div>

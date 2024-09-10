@@ -6,6 +6,7 @@ import router from './router'
 
 import PrimeVue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
+
 import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
@@ -19,8 +20,9 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
+const app = createApp(App)
 
 app.use(PrimeVue, { theme: { preset: Aura } })
 app.use(router)
