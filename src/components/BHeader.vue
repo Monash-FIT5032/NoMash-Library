@@ -19,6 +19,12 @@
             Contact us
           </router-link>
         </li>
+        <!-- New Firebase Login Link -->
+        <li class="nav-item">
+          <router-link to="/firelogin" class="nav-link" active-class="active">
+            Firebase Login
+          </router-link>
+        </li>
       </ul>
     </header>
   </div>
