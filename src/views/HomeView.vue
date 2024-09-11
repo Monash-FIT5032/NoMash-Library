@@ -20,6 +20,7 @@ const submitForm = () => {
   validatePassword(true)
   if (!errors.value.username && !errors.value.password) {
     submittedCards.value.push({ ...formData.value })
+    console.logsubmittedCards.value.push({ ...formData.value })
     clearForm()
   }
 }
@@ -203,7 +204,7 @@ const validateConfirmPassword = (blur) =>
 
   <!-- Submit and Clear Buttons -->
   <div class="text-center">
-    <button type="submit" class="btn btn-primary me-2">Submit</button>
+    <button type="submit" class="btn btn-primary me-2" @click="submitForm">Submit</button>
     <button type="button" class="btn btn-secondary" @click="clearForm">Clear</button>
   </div>
       

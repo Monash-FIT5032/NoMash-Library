@@ -3,25 +3,12 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-// Import PrimeVue
+// Import PrimeVue and theme
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 
-// Import Firebase
-import { initializeApp } from "firebase/app";
-
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAsz0Cd6CwZgSepQ82IGp2NaSfQlD3AwHo",
-  authDomain: "rutvika-ba31e.firebaseapp.com",
-  projectId: "rutvika-ba31e",
-  storageBucket: "rutvika-ba31e.appspot.com",
-  messagingSenderId: "823892598275",
-  appId: "1:823892598275:web:b9f701520627f750d63836"
-};
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
+// Initialize Firebase (without directly importing firebaseApp if not needed)
+import './firebase/init';  // This will initialize Firebase from init.js
 
 // Create Vue app
 const app = createApp(App);
