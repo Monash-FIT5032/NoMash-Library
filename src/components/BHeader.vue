@@ -27,6 +27,15 @@ import { isAuthenticated, logout } from '@/router/authentication';
         <li v-if="!isAuthenticated" class="nav-item">
           <router-link to="/FirebaseLogout" class="nav-link" active-class="active">FirebaseLogout</router-link>
         </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/addbook" class="nav-link" active-class="active">AddBook</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/deletebook" class="nav-link" active-class="active">DeleteBook</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/updatebook" class="nav-link" active-class="active">UpdateBook</router-link>
+        </li>
         <li v-if="isAuthenticated" class="nav-item">
           <router-link to="" class="nav-link" @click="logout">Logout</router-link>
         </li>
