@@ -9,12 +9,12 @@ import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'; // 确保�
 
 const routes = [
   {
-    path: '/FireLogin', // 确保所有路径以 '/' 开头
+    path: '/FireLogin', 
     name: 'FireLogin',
     component: FirebaseSigninView
   },
   {
-    path: '/FireRegister', // 确保所有路径以 '/' 开头
+    path: '/FireRegister', 
     name: 'FireRegister',
     component: FirebaseRegisterView
   },
