@@ -28,20 +28,21 @@ const signin = () => {
         router.push('/')
       }
       console.log("Firebase Sign In Successful!");
+      console.log("data", data)
+      console.log("data.user", data.user)
 
-      // 获取用户信息
+      
       const user = data.user;
       console.log("User ID:", user.uid);
       console.log("User Email:", user.email);
 
-      // 跳转到首页
       router.push("/");
 
-      // 打印当前已登录用户信息
+     
       console.log(auth.currentUser);
     })
     .catch((error) => {
-      // 错误处理
+    
       console.log("Error Code:", error.code);
       console.log("Error Message:", error.message);
     });
