@@ -4,25 +4,38 @@
   <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
+        <!-- Home Link -->
         <li class="nav-item">
           <router-link to="/" class="nav-link" active-class="active" aria-current="page">
             Home (Week 7)
           </router-link>
         </li>
+        
+        <!-- About Link -->
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">
             About
           </router-link>
         </li>
+        
+        <!-- Contact Us Link -->
         <li class="nav-item">
           <router-link to="/contact" class="nav-link" active-class="active">
-            Contact us
+            Contact Us
           </router-link>
         </li>
-        <!-- New Firebase Login Link -->
+        
+        <!-- Firebase Login Link -->
         <li class="nav-item">
           <router-link to="/firelogin" class="nav-link" active-class="active">
             Firebase Login
+          </router-link>
+        </li>
+        
+        <!-- Add Book Link for creating new book data -->
+        <li class="nav-item">
+          <router-link to="/addbook" class="nav-link" active-class="active">
+            Add Book
           </router-link>
         </li>
       </ul>
@@ -46,6 +59,7 @@
   background-color: var(--bs-dark);
   border-color: var(--bs-gray);
 }
+
 .form-control-dark:focus {
   color: #fff;
   background-color: var(--bs-dark);
