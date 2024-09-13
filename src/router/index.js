@@ -8,6 +8,7 @@ import FirebaseSigninView from '../views/FirebaseSigninView.vue'; // 确保路�
 import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'; // 确保路径正确
 import AddBookView from '@/views/AddBookView.vue';
 import BookListView from '@/views/BookListView.vue';
+import EditBookView from '@/views/EditBookView.vue';
 
 const routes = [
   {
@@ -50,6 +51,11 @@ const routes = [
     path: '/addbook',
     name: '/AddBook',
     component: AddBookView
+  },
+  {
+    path: '/editbook',
+    name: '/EditBook',
+    component: EditBookView
   }
 ];
 
