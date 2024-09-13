@@ -2,6 +2,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth"; // Import Firebase Auth
 
 // Firebase configuration
 const firebaseConfig = {
@@ -13,11 +14,16 @@ const firebaseConfig = {
   appId: "1:823892598275:web:b9f701520627f750d63836"
 };
 
+
 // Initialize Firebase app
 const firebaseApp = initializeApp(firebaseConfig);
+console.log("Firebase App Initialized:", firebaseApp);
 
 // Initialize Firestore
 const db = getFirestore(firebaseApp);
 
-// Export Firebase and Firestore
-export { firebaseApp, db };
+// Initialize Firebase Authentication
+const auth = getAuth(firebaseApp); // Initialize Auth
+
+// Export Firebase App, Firestore, and Auth
+export { firebaseApp, db, auth };

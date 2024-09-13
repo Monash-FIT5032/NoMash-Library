@@ -2,15 +2,15 @@
   <div>
     <h1>Create an Account</h1>
     <p>
-      <input type="text" placeholder="Email" v-model="email" />
+      <input type="text" placeholder="Email" v-model="email" required />
     </p>
     <p>
-      <input type="password" placeholder="Password" v-model="password" />
+      <input type="password" placeholder="Password" v-model="password" required />
     </p>
     <p>
       <button @click="register">Save to Firebase</button>
     </p>
-    <p v-if="error">{{ error }}</p>
+    <p v-if="error">{{ error }}</p> <!-- Display error message if any -->
   </div>
 </template>
 
@@ -25,13 +25,24 @@ const error = ref("");
 const router = useRouter();
 
 const register = async () => {
+  if (!email.value || !password.value) {
+    error.value = "Email and password are required!";
+    return;
+  }
+
   const auth = getAuth();
   try {
-    await createUserWithEmailAndPassword(auth, email.value, password.value);
+    // Create the user in Firebase Auth
+    const userCredential = await createUserWithEmailAndPassword(auth, email.value, password.value);
+    console.log("Registration successful:", userCredential.user); // Log the user information
+
     alert("User Registered Successfully!");
-    router.push("/firelogin");  // Redirect to login page after successful registration
+    
+    // Redirect to login page after successful registration
+    router.push("/firelogin");
   } catch (err) {
-    error.value = err.message;
+    console.error("Error during registration:", err.message); // Log error in console
+    error.value = err.message; // Show error in UI
   }
 };
 </script>
