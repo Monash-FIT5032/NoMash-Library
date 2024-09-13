@@ -21,6 +21,9 @@
           <button class="nav-link" @click="logout">Logout</button>
         </li>
         <li class="nav-item">
+          <router-link to="/booklist" class="nav-link" active-class="active">Book List</router-link>
+        </li>
+        <li class="nav-item">
           <router-link to="/addbook" class="nav-link" active-class="active">Add Book</router-link>
         </li>
       </ul>
