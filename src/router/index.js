@@ -6,6 +6,7 @@ import AccessDeniedView from '../views/AccessDeniedView.vue';
 import { store } from '../store'; // 假设 store 是默认导出
 import FirebaseSigninView from '../views/FirebaseSigninView.vue'; // 确保路径正确
 import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'; // 确保路径正确
+import AddBookView from '@/views/AddBookView.vue';
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: '/access-denied',
     name: 'AccessDenied',
     component: AccessDeniedView
+  },
+  {
+    path: '/addbook',
+    name: '/AddBook',
+    component: AddBookView
   }
 ];
 
