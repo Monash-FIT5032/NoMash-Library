@@ -53,7 +53,7 @@ const routes = [
     component: AddBookView
   },
   {
-    path: '/editbook',
+    path: '/editbook/:bookid',
     name: '/EditBook',
     component: EditBookView
   }

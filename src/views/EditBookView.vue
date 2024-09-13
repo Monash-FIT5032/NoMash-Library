@@ -10,7 +10,7 @@
           <label for="name">Name:</label>
           <input type="text" v-model="name" id="name" required />
         </div>
-        <button type="submit">Add Book</button>
+        <button type="edit">edit Book</button>
       </form>
     </div>
   </template>
@@ -19,10 +19,16 @@
   import { ref } from 'vue';
   import db from '../firebase/init.js';
   import { setDoc, doc } from 'firebase/firestore';
-  
+  import { useRoute} from 'vue-router'
   const isbn = ref(''); 
   const name = ref('');
   const refId = ref('');
+  const bookId = useRoute().params.bookid
+  console.log("edit book get roue param: " + bookId)
+
+  const getBook = () => {
+    // Add logic to fetch the book details if needed
+  };
   
   const editBook = async () => {
     try {
@@ -32,7 +38,7 @@
         return;
       }
       
-      await setDoc(doc(db, "books", refId.value), {
+      await setDoc(doc(db, "books", bookId), {
         isbn: isbnNumber,
         name: name.value
       });
@@ -43,12 +49,10 @@
     }
   };
   
-  // 函数定义应在 editBook 调用之后
-  const getBook = () => {
-    // Add logic to fetch the book details if needed
-  };
   
-  // 如果您需要在加载时获取书籍数据，可以使用此函数
+  
+  
+  
   getBook();
 </script>
 
