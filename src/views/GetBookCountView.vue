@@ -20,7 +20,7 @@
     methods: {
       async getBookCount() {
         try {
-          const response = await axios.get('https://some-url-to-fetch-books'); // Example URL
+          const response = await axios.get('https://countbooks-kju4xchsxa-uc.a.run.app'); 
           this.count = response.data.count;
           this.error = null;
         } catch (error) {
