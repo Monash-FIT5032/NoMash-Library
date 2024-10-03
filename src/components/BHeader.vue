@@ -22,11 +22,24 @@ import { isAuthenticated, logout } from '@/router/authentication';
           <router-link to="/FirebaseLogin" class="nav-link" active-class="active">FireBaseLogin</router-link>
         </li>
         <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/getBookCount" class="nav-link" active-class="active">GetBookCount</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/CountBookAPI" class="nav-link" active-class="active">Count Book API</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/GetAllBookAPI" class="nav-link" active-class="active">Get All Book API</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
+          <router-link to="/WeatherCheck" class="nav-link" active-class="active">Get Weather</router-link>
+        </li>
+        <li v-if="!isAuthenticated" class="nav-item">
           <router-link to="/FirebaseRegister" class="nav-link" active-class="active">FirebaseRegister</router-link>
         </li>
         <li v-if="!isAuthenticated" class="nav-item">
           <router-link to="/FirebaseLogout" class="nav-link" active-class="active">FirebaseLogout</router-link>
         </li>
+       
         <li v-if="!isAuthenticated" class="nav-item">
           <router-link to="/addbook" class="nav-link" active-class="active">AddBook</router-link>
         </li>
