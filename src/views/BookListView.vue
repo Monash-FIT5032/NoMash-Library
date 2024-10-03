@@ -32,7 +32,7 @@ export default {
 
     const fetchBooks = async () => {
       try {
-        // Create a query to retrieve books with isbn > 0, ordered by name, and limit the results to 10
+        // Create a query to retrieve books with isbn > 0, ordered by isbn, and limit the results to 7
         const q = query(
           collection(db, 'books'), 
           where('isbn', '>', 0),
