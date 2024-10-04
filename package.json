@@ -12,9 +12,12 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.0.4",
+    "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
+    "firebase": "^10.14.0",
     "primevue": "^4.0.4",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

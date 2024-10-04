@@ -2,6 +2,9 @@
 import { ref, computed } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+console.log("home auth", getAuth())
+
 
 const formData = ref({
   username: '',
