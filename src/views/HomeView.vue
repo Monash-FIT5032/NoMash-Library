@@ -165,7 +165,7 @@ const reasonContainFriend = (blur) => {
           </div>
           <div class="mb-3">
             <label for="reason" class="form-label">Suburb</label>
-            <input type="text" class="form-control" id="suburb" v-model="formData.suburb" />
+            <input type="text" class="form-control" id="suburb" v-bind:value="formData.suburb" />
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary me-2">Submit</button>
@@ -225,6 +225,9 @@ const reasonContainFriend = (blur) => {
 #username:focus,
 #password:focus,
 #isAustralian:focus,
+#confirm-password:focus,
+#reason:focus,
+#gender:focus
 .card {
   border: 1px solid #ccc;
   border-radius: 10px;
