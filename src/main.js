@@ -1,19 +1,23 @@
-// import './assets/main.css'
-// import '@/assets/style.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import { createApp } from 'vue'
-import App from './App.vue'
+// Import PrimeVue and theme
+import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 
-import PrimeVue from 'primevue/config'
-import Aura from '@primevue/themes/aura'
-// import DataTable from 'primevue/datatable'
-// import Column from 'primevue/Column'
+// Initialize Firebase (without directly importing firebaseApp if not needed)
+import './firebase/init';  // This will initialize Firebase from init.js
 
-const app = createApp(App)
-app.use(PrimeVue, { theme: { preset: Aura } })
+// Create Vue app
+const app = createApp(App);
 
-// app.component('DataTable', DataTable)
-// app.component('Column', Column)
+// PrimeVue setup
+app.use(PrimeVue, { theme: { preset: Aura } });
 
-app.mount('#app')
+// Use Vue Router
+app.use(router);
+
+// Mount the app
+app.mount('#app');
